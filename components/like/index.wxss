@@ -1,0 +1,26 @@
+/* components/like/index.wxss */
+.container{
+    /* rpx */
+    display: inline-flex;
+    padding: 10rpx;
+}
+
+.container image{
+    /* width: 32px;
+    height: 28px; */
+    /* rpx
+        像素/2 = rpx(px)
+     */
+     width: 32rpx;
+     height: 28rpx;
+
+}
+
+.container text{
+    color: #bbbbbb;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    position: relative;
+    left: 6rpx;
+    bottom: 10rpx;
+}

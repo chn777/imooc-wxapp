@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/classic/classic"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "首页",
+    "navigationStyle":"default",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": false
+  }
+}
