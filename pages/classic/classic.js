@@ -1,6 +1,8 @@
 // pages/classic/classic.js
 import { ClassicModel } from '../../models/classic.js'
+import { LikeModel } from '../../models/like.js'
 let classicModel = new ClassicModel();
+let likeModel = new LikeModel();
 Page({
 
   /**
@@ -66,5 +68,17 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+    /**
+     * 处理点赞
+     */
+    handle_sLike(event) {
+        console.log(event)
+        let behavior = event.detail.behavior 
+        likeModel.like(behavior,this.data.classicData.id,this.data.classicData.type,res => {
+            console.log(res);
+        })
+        
+    }
 })

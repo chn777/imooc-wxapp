@@ -37,7 +37,9 @@ Component({
             count = like?count-1:count+1;
             this.setData({
                 count,like:!like
-            })
+            });
+            let behavior = this.properties.like;
+            this.triggerEvent('sLike', { behavior ,name:"CHN777" },{})
         }
     }
 })
