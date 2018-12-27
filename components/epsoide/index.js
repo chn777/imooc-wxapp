@@ -7,11 +7,11 @@ Component({
         index:{
             type:String,
             observer(newVal, oldVal, changePath){
-                console.log('new',newVal);
-                console.log('old',oldVal);
-                console.log('path', changePath)
+                // console.log('new',newVal);
+                // console.log('old',oldVal);
+                // console.log('path', changePath)
                 let index = parseInt(newVal) < 10 ? "0"+ newVal : newVal;
-                console.log(index);
+                // console.log(index);
                 this.setData({ _index: index}) 
                 
             }

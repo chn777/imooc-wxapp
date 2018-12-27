@@ -88,13 +88,28 @@ Page({
      * 处理导航左键点击
      */
     onNext(event) {
-        console.log(event);
+        this._updateClassic('next');
     },
 
     /**
      * 处理导航右键点击
      */
     onPrev(event) {
-        console.log(event)
+        this._updateClassic('previous');
+    },
+
+    _updateClassic(nextOrPrevious){
+        let index = this.data.classicData.index;
+        this.setData({
+            latest: classicModel.isLatest(index),
+            first: classicModel.isFisrt(index)
+        });
+        classicModel.getClassic(index, nextOrPrevious,res => {
+            this.setData({
+                classicData: res
+            });
+        })
     }
+
+    
 })
