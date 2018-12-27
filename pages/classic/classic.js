@@ -9,7 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-      classicData:null
+      classicData:null,
+      latest: true,
+      first:false,
   },
 
   /**
@@ -17,7 +19,7 @@ Page({
    */
   onLoad: function (options) {
       classicModel.getLatest(res=>{
-          this.setData({classicData:res})
+          this.setData({classicData:res});
       });
   },
 
