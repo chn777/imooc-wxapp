@@ -6,7 +6,9 @@ let classicBeh = Behavior({
     },
     data: {
     },
-    attached() {},
+    attached() {
+        console.log("behaviors 的 attached")
+    },
     methods: {
     }
 });
