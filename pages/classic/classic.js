@@ -82,5 +82,19 @@ Page({
             console.log(res);
         })
         
+    },
+
+    /**
+     * 处理导航左键点击
+     */
+    onNext(event) {
+        console.log(event);
+    },
+
+    /**
+     * 处理导航右键点击
+     */
+    onPrev(event) {
+        console.log(event)
     }
 })

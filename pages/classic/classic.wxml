@@ -17,6 +17,8 @@
     <v-navi class="navi" 
             title="{{classicData.title}}"
             first="{{first}}"
-            latest="{{latest}}">
+            latest="{{latest}}"
+            bind:left="onNext"
+            bind:right="onPrev">
     </v-navi>
 </view>
