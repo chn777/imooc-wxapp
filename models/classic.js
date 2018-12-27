@@ -39,6 +39,8 @@ class ClassicModel extends HTTP{
     _getLatestIndex(){
         return wx.getStorageSync('latestIndex');
     }
+
+    
 }
 
 export { ClassicModel}
