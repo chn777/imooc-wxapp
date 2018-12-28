@@ -24,6 +24,7 @@ Component({
 
     attached : function() {
         this._recoverStatus()
+        this._monitorSwitch()
     },
 
     /**
@@ -56,6 +57,26 @@ Component({
             {
                 this.setData({playing:true})
             }
+        },
+
+        _monitorSwitch () {
+            mMgr.onPlay(() => {
+                this._recoverStatus();
+            })
+
+            mMgr.onPause(() => {
+                this._recoverStatus();
+            })
+
+            mMgr.onStop(() => {
+                this._recoverStatus();
+            })
+
+            mMgr.onEnded(() => {
+                this._recoverStatus();
+            })
+
+
         }
     }
 
