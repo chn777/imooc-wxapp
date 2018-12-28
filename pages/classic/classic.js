@@ -78,8 +78,7 @@ Page({
      * 处理点赞
      */
     handle_sLike(event) {
-        console.log(event)
-        let behavior = event.detail.behavior 
+        let behavior = event.detail.behavior;
         likeModel.like(behavior,this.data.classicData.id,this.data.classicData.type,res => {
             console.log(res);
         })

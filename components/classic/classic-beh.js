@@ -2,7 +2,8 @@ let classicBeh = Behavior({
     behaviors: [],
     properties: {
         img: String,
-        content: String
+        content: String,
+        hidden:Boolean
     },
     data: {
     },
