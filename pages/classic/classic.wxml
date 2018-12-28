@@ -14,7 +14,7 @@
             content="{{classicData.content}}">
     </v-movie>
     
-    <v-music hidden="{{classicData.type ==200}}" img="{{classicData.image}}" 
+    <v-music hidden="{{classicData.type != 200}}" img="{{classicData.image}}" 
             content="{{classicData.content}}">
     </v-music>
 
