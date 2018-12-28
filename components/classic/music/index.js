@@ -22,6 +22,10 @@ Component({
         playSrc: 'images/player@play.png',
     },
 
+    attached : function() {
+        this._recoverStatus()
+    },
+
     /**
      * 组件的方法列表
      */
@@ -41,6 +45,20 @@ Component({
                 this.setData({playing:false});
                 mMgr.pause()
             }
-        } 
+        } ,
+
+        _recoverStatus () {
+            if(mMgr.paused){
+                this.setData({playing:false});
+                return ;
+            }
+            if(mMgr.src == this.properties.src)
+            {
+                this.setData({playing:true})
+            }
+        }
     }
+
+
+    
 })
