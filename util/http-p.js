@@ -5,11 +5,17 @@ const tips = {
     3000:'期刊不存在'
 }
 class HTTP {
-    request (params) {
+    request ({url,data={},method="GET"}) {
+        return new Promise((resolve,reject) => {
+            this._request(url, resolve, reject, data, method);
+        })
+    }
+
+    _request(url, resolve, reject, data={}, method="GET") {
         wx.request({
-            url: CONFIG.API_BASE_URL + params.url,
-            method: params.method ? params.method : 'GET',
-            data: params.data,
+            url: CONFIG.API_BASE_URL + url,
+            method: method,
+            data: data,
             header: {
                 'content-type':'application/json',
                 'appkey': CONFIG.APP_KEY
@@ -17,14 +23,16 @@ class HTTP {
             success: res => {
                 if(res.statusCode.toString().startsWith(2))
                 {
-                    params.success(res.data);
+                    resolve(res.data);
                 }
                 else
                 {
-                    this._show_error(res.data.error_code)
+                    reject();
+                    this._show_error(res.data.error_code);
                 }
             },
             fail: fal => {
+                reject();
                 this._show_error(1)
             }
         })
@@ -41,7 +49,7 @@ class HTTP {
         wx.showToast({
             title: tip ? tip : "未知错误：" + erroCode,
             icon: 'none',
-            duration: 3000
+            duration: 3000 
         })
     }
 }
